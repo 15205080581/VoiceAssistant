@@ -1,7 +1,8 @@
 package com.fjnu.bean;
 
 /**
- * Created by Administrator on 2016/10/22.
+ * Created by xujiaqi
+ * 聊天 bean
  */
 
 public class ChatBean {

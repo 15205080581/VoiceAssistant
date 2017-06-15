@@ -7,55 +7,56 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.edu.viocesimple.R;
+import com.fjnu.R;
+import com.fjnu.bean.ItemBean;
 
 import java.util.List;
 
-import bean.ChatBean;
-import bean.ItemBean;
-
-
-
+/**
+ * 列表视图适配类
+ */
 public class MyAdapter extends BaseAdapter {
-    private List<ItemBean> list;
-    private Context context;
-    public MyAdapter(List<ItemBean>list, Context context){
-        this.list=list;
-        this.context=context;
-    }
-    @Override
-    public int getCount() {
-        return list.size();
-    }
+	private List<ItemBean> list;
+	private Context context;
 
-    @Override
-    public Object getItem(int position) {
-        return list.get(position);
-    }
+	public MyAdapter(List<ItemBean> list, Context context) {
+		this.list = list;
+		this.context = context;
+	}
 
-    @Override
-    public long getItemId(int position) {
-        return position;
-    }
+	@Override
+	public int getCount() {
+		return list.size();
+	}
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-       ViewHoder hoder=null;
+	@Override
+	public Object getItem(int position) {
+		return list.get(position);
+	}
 
-        if (convertView!=null){
-            hoder= (ViewHoder) convertView.getTag();
-        }else {
-            convertView= LayoutInflater.from(context).inflate(R.layout.listview_item,null);
-            hoder=new ViewHoder();
-            hoder.mTv= (TextView) convertView.findViewById(R.id.content_tv);
-            convertView.setTag(hoder);
-        }
-        hoder.mTv.setText(list.get(position).getContent());
-        return convertView;
-    }
+	@Override
+	public long getItemId(int position) {
+		return position;
+	}
 
-    class ViewHoder{
-        private TextView mTv;
+	@Override
+	public View getView(int position, View convertView, ViewGroup parent) {
+		ViewHoder hoder = null;
 
-    }
+		if (convertView != null) {
+			hoder = (ViewHoder) convertView.getTag();
+		} else {
+			convertView = LayoutInflater.from(context).inflate(R.layout.listview_item, null);
+			hoder = new ViewHoder();
+			hoder.mTv = (TextView) convertView.findViewById(R.id.content_tv);
+			convertView.setTag(hoder);
+		}
+		hoder.mTv.setText(list.get(position).getContent());
+		return convertView;
+	}
+
+	class ViewHoder {
+		private TextView mTv;
+
+	}
 }

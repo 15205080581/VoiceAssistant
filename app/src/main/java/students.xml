@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+  <student>
+    <no>1234</no>
+    <name>wzw</name>
+    <age>21</age>
+    <sex>男</sex>
+  </student>
+</students>
